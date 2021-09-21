@@ -7,34 +7,33 @@ public class secondmain {
                 {"0", "0", "0", "0", "0"},
                 {"0", "0", "0", "0", "0"},
                 {"0", "0", "0", "0", "0"}};
-        Scanner sc = new Scanner(System.in);
         Placecs Cruisers = new Placecs();
         Placebs Battleships = new Placebs();
+        Play startgame = new Play();
         int inputline;
         int inputcollum;
         String inputdirection;
-        String inputship;
         int counter = 1;
+
         while (counter <= 4) {
-            inputline = (int) (Math.random() * 4);
-            inputcollum = (int) (Math.random() * 4);
+            inputline = (int) (Math.random() * 5);
+            inputcollum = (int) (Math.random() * 5);
             inputdirection = v_or_h();
 
-            for (int i = 0; i < grid.length; i++) {
-                for (int j = 0; j < grid[i].length; j++) {
-                    if (inputline == i && inputcollum == j) {
-                        if (counter <= 2) {
-                            grid = Cruisers.placecr(grid, inputdirection, inputline, inputcollum);
-                        } else {
-                            grid = Battleships.placebs(grid, inputdirection, inputline, inputcollum);
-                        }
-                    }
-                }
+            if (counter <= 2) {
+                grid = Cruisers.placecr(grid, inputdirection, inputline, inputcollum);
+            } else {
+                grid = Battleships.placebs(grid, inputdirection, inputline, inputcollum);
             }
+
+
             counter++;
             //Printarray(grid);
         }
         Printarray(grid);
+        grid = startgame.game(grid);
+        Printarray(grid);
+
     }
 
     public static void Printarray(String[][] grid) {
