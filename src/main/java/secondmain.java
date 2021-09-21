@@ -8,44 +8,32 @@ public class secondmain {
                 {"0", "0", "0", "0", "0"},
                 {"0", "0", "0", "0", "0"}};
         Scanner sc = new Scanner(System.in);
+        Placecs Cruisers = new Placecs();
+        Placebs Battleships = new Placebs();
         int inputline;
         int inputcollum;
         String inputdirection;
         String inputship;
         int counter = 1;
-        System.out.println("This is your 5x5 playing grid: ");
-        Printarray(grid);
-
-        //System.out.println("c for Carrier or b for Battleship");
-        //inputship = sc.nextLine().toLowerCase();
-
         while (counter <= 4) {
-            System.out.println("In wich line do you want to set your ship?: ");
-            inputline = sc.nextInt();
-
-            System.out.println("In wich collum do you want to set your ship?: ");
-            inputcollum = sc.nextInt();
-
-            System.out.println("v for vertically or h for horizontally");
-            inputdirection = sc.nextLine().toLowerCase();
-            inputdirection = sc.nextLine().toLowerCase();
+            inputline = (int) (Math.random() * 4);
+            inputcollum = (int) (Math.random() * 4);
+            inputdirection = v_or_h();
 
             for (int i = 0; i < grid.length; i++) {
                 for (int j = 0; j < grid[i].length; j++) {
                     if (inputline == i && inputcollum == j) {
-                        if (counter < 2) {
-                            grid = placecr(grid, inputdirection, i, j);
+                        if (counter <= 2) {
+                            grid = Cruisers.placecr(grid, inputdirection, inputline, inputcollum);
                         } else {
-                            grid = placebs(grid, inputdirection, i, j);
+                            grid = Battleships.placebs(grid, inputdirection, inputline, inputcollum);
                         }
-                        grid[i][j] = "X";
                     }
                 }
             }
             counter++;
             Printarray(grid);
         }
-
         Printarray(grid);
     }
 
@@ -60,45 +48,19 @@ public class secondmain {
         }
     }
 
-    public static String[][] placebs(String[][] grid, String inputdriection, int pos1, int pos2) {
-        if (inputdriection.equals("v")) {
-            if (pos1 <= 2) {
-                grid[pos1 + 1][pos2] = "X";
-                grid[pos1 + 2][pos2] = "X";
-            } else {
-                grid[pos1 - 1][pos2] = "X";
-                grid[pos1 - 2][pos2] = "X";
-            }
-
-        } else if (inputdriection.equals("h")) {
-            if (pos2 <= 2) {
-                grid[pos1][pos2 + 1] = "X";
-                grid[pos1][pos2 + 2] = "X";
-            } else {
-                grid[pos1][pos2 - 1] = "X";
-                grid[pos1][pos2 - 2] = "X";
-            }
-
+    public static String v_or_h() {
+        int random = (int) (Math.random() * 2 + 1);
+        String direction = "";
+        switch (random) {
+            case 1:
+                direction = "v";
+                break;
+            case 2:
+                direction = "h";
+                break;
+            default:
+                System.exit(101);
         }
-        return grid;
-    }
-
-    public static String[][] placecr(String[][] grid, String inputdriection, int pos1, int pos2) {
-        if (inputdriection.equals("v")) {
-            if (pos1 <= 3) {
-                grid[pos1 + 1][pos2] = "X";
-            } else {
-                grid[pos1 - 1][pos2] = "X";
-            }
-
-        } else if (inputdriection.equals("h")) {
-            if (pos2 <= 3) {
-                grid[pos1][pos2 + 1] = "X";
-            } else {
-                grid[pos1][pos2 - 1] = "X";
-            }
-
-        }
-        return grid;
+        return direction;
     }
 }

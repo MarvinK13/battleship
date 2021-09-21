@@ -8,7 +8,7 @@ public class Placecs {
             while (pos1 >3 || grid[pos1][pos2].equals("X") || grid[pos1+1][pos2].equals("X")) {
                 System.out.println("\nPlease enter anoter line where no ship is and the grid is not expanded: ");
                 pos1 = sc.nextInt();
-                System.out.println("Please enter anoter collum: ");
+                System.out.println("Please enter anoter collum where no ship is and the grid is not expanded: ");
                 pos2 = sc.nextInt();
             }
             grid[pos1][pos2] = "X";
@@ -18,7 +18,7 @@ public class Placecs {
             while (pos2 >3 || grid[pos1][pos2].equals("X") || grid[pos1][pos2 + 1].equals("X")) {
                 System.out.println("\nPlease enter anoter line where no ship is and the grid is not expanded: ");
                 pos1 = sc.nextInt();
-                System.out.println("Please enter anoter collum: ");
+                System.out.println("Please enter anoter collum where no ship is and the grid is not expanded: ");
                 pos2 = sc.nextInt();
             }
             grid[pos1][pos2] = "X";
