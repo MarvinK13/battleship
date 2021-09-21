@@ -19,31 +19,24 @@ public class secondmain {
             inputline = (int) (Math.random() * 5);
             inputcollum = (int) (Math.random() * 5);
             inputdirection = v_or_h();
-
             if (counter <= 2) {
                 grid = Cruisers.placecr(grid, inputdirection, inputline, inputcollum);
             } else {
                 grid = Battleships.placebs(grid, inputdirection, inputline, inputcollum);
             }
-
-
             counter++;
-            //Printarray(grid);
         }
         Printarray(grid);
         grid = startgame.game(grid);
         Printarray(grid);
-
     }
 
     public static void Printarray(String[][] grid) {
         for (int i = 0; i < grid.length; i++) {
             if (i == 0) {
-                System.out.println("\nG|" + 0 + "--" + 1 + "--" + 2 + "--" + 3 + "--" + 4 + "|");
-
+                System.out.println("\nG|" + 0 + "--" + 1 + "--" + 2 + "--" + 3 + "--" + 4 + "|G");
             }
-            System.out.println(i + "|" + grid[i][0] + "--" + grid[i][1] + "--" + grid[i][2] + "--" + grid[i][3] + "--" + grid[i][4] + "|");
-
+            System.out.println(i + "|" + grid[i][0] + "  " + grid[i][1] + "  " + grid[i][2] + "  " + grid[i][3] + "  " + grid[i][4] + "|"+i);
         }
     }
 

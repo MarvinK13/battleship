@@ -51,11 +51,9 @@ public class Main {
     public static void Printarray(String[][] grid) {
         for (int i = 0; i < grid.length; i++) {
             if (i == 0) {
-                System.out.println("\nG|" + 0 + "--" + 1 + "--" + 2 + "--" + 3 + "--" + 4 + "|");
-
+                System.out.println("\nG|" + 0 + "--" + 1 + "--" + 2 + "--" + 3 + "--" + 4 + "|G");
             }
-            System.out.println(i + "|" + grid[i][0] + "--" + grid[i][1] + "--" + grid[i][2] + "--" + grid[i][3] + "--" + grid[i][4] + "|");
-
+            System.out.println(i + "|" + grid[i][0] + "--" + grid[i][1] + "--" + grid[i][2] + "--" + grid[i][3] + "--" + grid[i][4] + "|"+i);
         }
     }
 
