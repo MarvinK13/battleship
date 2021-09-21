@@ -23,10 +23,8 @@ public class Main {
         while (counter <= 4) {
             System.out.println("In wich line do you want to set your ship?: ");
             inputline = sc.nextInt();
-
             System.out.println("In wich collum do you want to set your ship?: ");
             inputcollum = sc.nextInt();
-
             System.out.println("v for vertically or h for horizontally");
             inputdirection = sc.nextLine().toLowerCase();
             inputdirection = sc.nextLine().toLowerCase();
@@ -41,7 +39,6 @@ public class Main {
                             grid = Battleships.placebs(grid, inputdirection, inputline, inputcollum);
                             Printmessage("Battleship", inputline, inputcollum);
                         }
-                        grid[i][j] = "X";
                     }
                 }
             }
