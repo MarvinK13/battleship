@@ -32,7 +32,7 @@ public class secondmain {
                 }
             }
             counter++;
-            Printarray(grid);
+            //Printarray(grid);
         }
         Printarray(grid);
     }
