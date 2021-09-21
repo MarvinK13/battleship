@@ -1,2 +1,3 @@
 # battleship
-You just need to excecute the main. Ingore the secondmain
+You only have to executed the sceondmain, and than follow the 
+insdtructions form the console

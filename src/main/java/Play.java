@@ -6,7 +6,7 @@ public class Play {
         System.out.println("It`s time to play this game| B means Battleship and C means Cruiser");
         int inputline;
         int inputcollum;
-        int counter=0;
+        int counter = 0;
 
         for (int g = 0; g < 10; g++) {
             System.out.print("Insert a line you want to search(0-4): ");
@@ -21,7 +21,7 @@ public class Play {
                 System.out.println("You have hit nothing ");
             }
         }
-        System.out.println("You had "+counter+" hits");
+        System.out.println("You had " + counter + " hits");
         return grid;
     }
 }
