@@ -8,8 +8,8 @@ public class Play {
         int inputcollum;
         int counter = 0;
 
-        for (int g = 0; g < 10; g++) {
-            System.out.print("Insert a line you want to search(0-4): ");
+        for (int g = 1; g <= 10; g++) {
+            System.out.print("(Try: "+g+" Insert a line you want to search(0-4): ");
             inputline = sc.nextInt();
             System.out.print("Insert a collum you want to search(0-4): ");
             inputcollum = sc.nextInt();

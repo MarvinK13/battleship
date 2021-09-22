@@ -51,7 +51,7 @@ public class secondmain {
                 direction = "h";
                 break;
             default:
-                System.exit(101);
+                System.exit(130);
         }
         return direction;
     }

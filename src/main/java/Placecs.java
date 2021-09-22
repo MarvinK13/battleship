@@ -1,24 +1,21 @@
 import java.util.Scanner;
 
 public class Placecs {
-    public String[][] placecr(String[][] grid, String inputdriection, int pos1, int pos2) {
-        Scanner sc = new Scanner(System.in);
+    public String[][] placecr(String[][] grid, String inputdriection, int inputline, int inputcollum) {
         if (inputdriection.equals("v")) {
-
-            while (pos1 > 3 || !grid[pos1][pos2].equals("0") || !grid[pos1 + 1][pos2].equals("0")) {
-                pos1 = randomnumber();
-                pos2 = randomnumber();
+            while (inputline > 3 || !grid[inputline][inputcollum].equals("0") || !grid[inputline + 1][inputcollum].equals("0")) {
+                inputline = randomnumber();
+                inputcollum = randomnumber();
             }
-            grid[pos1][pos2] = "C";
-            grid[pos1 + 1][pos2] = "C";
+            grid[inputline][inputcollum] = "C";
+            grid[inputline + 1][inputcollum] = "C";
         } else if (inputdriection.equals("h")) {
-
-            while (pos2 > 3 || !grid[pos1][pos2].equals("0") || !grid[pos1][pos2 + 1].equals("0")) {
-                pos1 = randomnumber();
-                pos2 = randomnumber();
+            while (inputcollum > 3 || !grid[inputline][inputcollum].equals("0") || !grid[inputline][inputcollum + 1].equals("0")) {
+                inputline = randomnumber();
+                inputcollum = randomnumber();
             }
-            grid[pos1][pos2] = "C";
-            grid[pos1][pos2 + 1] = "C";
+            grid[inputline][inputcollum] = "C";
+            grid[inputline][inputcollum + 1] = "C";
         }
         return grid;
     }

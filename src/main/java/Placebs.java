@@ -1,25 +1,26 @@
 import java.util.Scanner;
 
 public class Placebs {
-    public String[][] placebs(String[][] grid, String inputdriection, int pos1, int pos2) {
-        Scanner sc = new Scanner(System.in);
+    public String[][] placebs(String[][] grid, String inputdriection, int inputline, int inputcollum) {
         if (inputdriection.equals("v")) {
-            while (pos1 > 2 || !grid[pos1 + 1][pos2].equals("0") || !grid[pos1][pos2].equals("0") || !grid[pos1 + 2][pos2].equals("0")) {
-                pos1 = randomnumber();
-                pos2 = randomnumber();
+            while (inputline > 2 || !grid[inputline + 1][inputcollum].equals("0") ||
+                    !grid[inputline][inputcollum].equals("0") || !grid[inputline + 2][inputcollum].equals("0")) {
+                inputline = randomnumber();
+                inputcollum = randomnumber();
             }
-            grid[pos1][pos2] = "B";
-            grid[pos1 + 1][pos2] = "B";
-            grid[pos1 + 2][pos2] = "B";
+            grid[inputline][inputcollum] = "B";
+            grid[inputline + 1][inputcollum] = "B";
+            grid[inputline + 2][inputcollum] = "B";
 
         } else if (inputdriection.equals("h")) {
-            while (pos2 > 2 || !grid[pos1][pos2].equals("0") || !grid[pos1][pos2 + 1].equals("0") || !grid[pos1][pos2 + 2].equals("0")) {
-                pos1 = randomnumber();
-                pos2 = randomnumber();
+            while (inputcollum > 2 || !grid[inputline][inputcollum].equals("0") ||
+                    !grid[inputline][inputcollum + 1].equals("0") || !grid[inputline][inputcollum + 2].equals("0")) {
+                inputline = randomnumber();
+                inputcollum = randomnumber();
             }
-            grid[pos1][pos2] = "B";
-            grid[pos1][pos2 + 1] = "B";
-            grid[pos1][pos2 + 2] = "B";
+            grid[inputline][inputcollum] = "B";
+            grid[inputline][inputcollum + 1] = "B";
+            grid[inputline][inputcollum + 2] = "B";
         }
         return grid;
     }
